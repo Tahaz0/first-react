@@ -3,33 +3,46 @@ import React from "react";
 
 let bData = [
     {
-      name : "Facebook",
-      link : "https://www.facebook.com/",
-      text : "Click here to enter facebook"
+      pic : "https://cdn.myanimelist.net/images/anime/1443/111830.jpg",
+      title : "KINGDOM",
     },
     {
-      name : "YOUTUBE",
-      link : "https://www.youtube.com/",
-      text : "Click here to enter YouTube"
+      pic : "https://m.media-amazon.com/images/M/MV5BNzc5MTczNDQtNDFjNi00ZDU5LWFkNzItOTE1NzQzMzdhNzMxXkEyXkFqcGdeQXVyNTgyNTA4MjM@._V1_.jpg",
+      title : "ATTACK ON TITAN",
     },
     {
-      name : "GITHUB",
-      link : "https://www.youtube.com/",
-      text : "Click here to enter gitHub"
-    }
-]
-// console.log(bData);
+     pic : "https://m.media-amazon.com/images/M/MV5BNjRiNmNjMmMtN2U2Yi00ODgxLTk3OTMtMmI1MTI1NjYyZTEzXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg",
+      title : "DEATH NOTE",
+    },
+    {
+     pic : "https://staticg.sportskeeda.com/editor/2021/10/8bbb3-16349088266046-1920.jpg",
+      title : "NARUTO",
+    },
+    {
+     pic : "https://cdn.myanimelist.net/images/anime/1500/103005.jpg",
+     title : "VINLAND SAGA",
+    },
+    {
+     pic : "https://m.media-amazon.com/images/M/MV5BNGM0YTk3MWEtN2JlZC00ZmZmLWIwMDktZTMxZGE5Zjc2MGExXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
+      title : "HUNTER x HUNTER",
+    },
+];
 
 function Component(props) {
-    // console.log(props);
+  
     return (
-        <div>
-           <a href= {props.link} target = "_blank" >
-             <button type="submit" style={{color:'red', padding: '12px 24px'}} > {props.name} </button>
-           </a>
-           <p style={{fontSize:'9px'}}> {props.text} </p>
+    <div className="cards" style= {{ display: 'flex' }} >
+      <div className="card">
+        <img src= { props.pic } />
+        <div className="card-info">
+          <h4> { props.title } </h4>
+          <a href="#">
+            <button>WATCH NOW</button>
+          </a>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 

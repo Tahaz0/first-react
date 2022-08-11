@@ -1,55 +1,47 @@
-
+import React from 'react';
 import './App.css';
-import Component, { bData } from "./Component";
+import './index.css';
+import Component, {bData} from "./Component";
 
 
 function App() {
+
   return (
-    // ************ 1st way starts *************
-
-  //    <div style={{display:'flex', justifyContent:'center', alignItems:'center', height:'100vh', gap:'2rem'}}>
-  //      <Component
-  //      name = "Facebook"
-  //      link = "https://www.facebook.com/"
-  //      text = "Click here to enter Facebook"
-  //    />
-  //    <Component
-  //      name = "YOUTUBE"
-  //      link = "https://www.youtube.com/"
-  //      text = "Click here to enter YouTube"
-  //    />
-  //    <Component
-  //      name = "GITHUB"
-  //      link = "https://www.youtube.com/"
-  //      text = "Click here to enter gitHub"
-  //    />
-  //    </div>
-  // );
-    // ************1st way end *************
-
-
-    //************ 2nd way starts **************
+  <div style={{display:'flex', flexWrap:'wrap', gap: '2rem', justifyContent: 'center', margin:'0 auto', width:'80%' } }>
     
-    <div style={{display:'flex', justifyContent:'center', alignItems:'center', height:'100vh', gap:'3rem'}}>
-      <Component
-      name = {bData[0].name}
-      link = {bData[0].link}
-      text = {bData[0].text}
+    {/* <Component
+      pic = {bData[1].pic}
+      title = {bData[1].title}
     />
     <Component
-      name = {bData[1].name}
-      link = {bData[1].link}
-      text = {bData[1].text}
+      pic = {bData[2].pic}
+      title = {bData[2].title}
     />
     <Component
-      name = {bData[2].name}
-      link = {bData[2].link}
-      text = {bData[2].text}
+      pic = {bData[3].pic}
+      title = {bData[3].title}
     />
-    </div>
-    );
+    <Component
+      pic = {bData[4].pic}
+      title = {bData[4].title}
+    />
+    <Component
+      pic = {bData[5].pic}
+      title = {bData[5].title}
+    /> */}
 
-    //************ 2nd way ends ****************
-  }
+    {bData.map((val)=> {
+      return(
+    <Component
+      pic = {valu.pic}
+      title = {valu.title}
+    />
+  );
+    })}
+</div>
+
+)
+   
+};
 
 export default App;
