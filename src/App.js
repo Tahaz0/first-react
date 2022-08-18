@@ -1,47 +1,27 @@
 import React from 'react';
 import './App.css';
-import './index.css';
-import Component, {bData} from "./Component";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Clock from './components/Clock';
+import Navbar from './components/Navbar';
+import List from './components/Watched';
 
 
 function App() {
 
+
   return (
-  <div style={{display:'flex', flexWrap:'wrap', gap: '2rem', justifyContent: 'center', margin:'0 auto', width:'80%' } }>
     
-    {/* <Component
-      pic = {bData[1].pic}
-      title = {bData[1].title}
-    />
-    <Component
-      pic = {bData[2].pic}
-      title = {bData[2].title}
-    />
-    <Component
-      pic = {bData[3].pic}
-      title = {bData[3].title}
-    />
-    <Component
-      pic = {bData[4].pic}
-      title = {bData[4].title}
-    />
-    <Component
-      pic = {bData[5].pic}
-      title = {bData[5].title}
-    /> */}
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Clock name="" />} />
+        <Route path='/about' element={<div style={{ height: '100vh', width: '100%', backgroundColor: 'black' }}><h1>HELLO, welcome to about page</h1></div>} />
+        <Route path='/watched' element={<div><h3 style={{ color: 'green', textAlign: 'center' }}>YOUR SERIES WATCHED LIST</h3> <List /></div>} />
+      </Routes>
+    </BrowserRouter>
 
-    {bData.map((val)=> {
-      return(
-    <Component
-      pic = {valu.pic}
-      title = {valu.title}
-    />
   );
-    })}
-</div>
-
-)
-   
 };
 
 export default App;
+
