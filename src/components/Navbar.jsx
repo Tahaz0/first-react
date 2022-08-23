@@ -9,10 +9,13 @@ export default function Navbar() {
                     HOME
                 </Link>
                 <Link to='/about'>
-                    ABOUT
+                    About
                 </Link>
-                <Link to='/watched'>
-                    WATCHED LIST
+                <Link to='/comment'>
+                    COMMENT
+                </Link>
+                <Link to='/login'>
+                    Log In
                 </Link>
             </nav>
         </div>

@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { React } from "react";
+
 let card = {
     width: '260px',
     height: '350px',
@@ -11,18 +11,19 @@ let card = {
     textAlign: 'center'
 };
 
-function Watched({ item }) {
+const CmntCard = ({ item }) => {
+
     return (
         <div className="cards" >
             <div style={card}>
                 <div className="card-info">
-                    <h1> {item.id} </h1>
-                    <h3> {item.title} </h3>
+                    <h2> {item.name} </h2>
+                    <h3> {item.email} </h3>
                     <p> {item.body} </p>
-                    <Link to={`/about/${item.id}`}><button>Next</button></Link>
                 </div>
             </div>
         </div>
     );
-}
-export default Watched;
+};
+
+export default CmntCard;

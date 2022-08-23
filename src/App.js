@@ -1,22 +1,44 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Clock from './components/Clock';
 import Navbar from './components/Navbar';
-import List from './components/Watched';
+import Api from './components/Api';
+import CmntApi from './components/CmntApi';
+import About from './components/About';
+import Login from './components/Login';
+import Private from './components/Private';
 
+
+let divStyle = {
+  justifyContent: 'center',
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '1rem'
+}
 
 function App() {
 
 
   return (
-    
+
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Clock name="" />} />
-        <Route path='/about' element={<div style={{ height: '100vh', width: '100%', backgroundColor: 'black' }}><h1>HELLO, welcome to about page</h1></div>} />
-        <Route path='/watched' element={<div><h3 style={{ color: 'green', textAlign: 'center' }}>YOUR SERIES WATCHED LIST</h3> <List /></div>} />
+        <Route path='/' element={<div style={divStyle}> <Api /></div>} />
+
+        <Route path='/about/:id' element={<div style={divStyle}> <About /> </div>} />
+
+        <Route path='/comment' element={<Private> <div style={{ height: '100vh', width: '100%', backgroundColor: 'blue' }}><h1>HELLO, welcome to comment page</h1>
+          <div style={divStyle}>
+            <CmntApi
+
+            />
+          </div>
+        </div> </Private>} />
+
+        <Route
+          path='/login' element={<Login />}
+        />
       </Routes>
     </BrowserRouter>
 
